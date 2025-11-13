@@ -75,7 +75,7 @@ class Generation:
         for i in tqdm(range(self.num_iterations)):
             n_best = self.get_n_best(4)
             self.new_generation(n_best)
-            if i % self.num_iterations % 10 == 0:
+            if i % 10 == 0:
                 self.population_snapshot(i)
                 best = self.get_n_best(1)[0][1]
                 img = best.grow_result()
