@@ -124,18 +124,16 @@ class Circle(Gene):
         # Shape.__init__(self, color, color_int, params)
 
     def draw_on(self, arr: np.array) -> np.array:
-        rr, cc = draw.circle(r=self.y,
-                             c=self.x,
-                             radius=self.radius,
-                             shape=arr.shape)
+        rr, cc = draw.disk(center=(self.y, self.x),
+                           radius=self.radius,
+                           shape=arr.shape)
         arr[rr, cc, 0] = self.r
         arr[rr, cc, 1] = self.g
         arr[rr, cc, 2] = self.b
 
-        # rr, cc = draw.circle(r=self.params.y,
-        #                      c=self.params.x,
-        #                      radius=self.params.radius + 1,
-        #                      shape=arr.shape)
+        # rr, cc = draw.disk(center=(self.params.y, self.params.x),
+        #                    radius=self.params.radius + 1,
+        #                    shape=arr.shape)
         # arr[rr, cc, self.color.value] = self.color_intensity
         return arr
 
