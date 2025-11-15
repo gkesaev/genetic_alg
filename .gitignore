@@ -127,4 +127,5 @@ dmypy.json
 
 # Generated output images
 output/
+output_improved/
 
